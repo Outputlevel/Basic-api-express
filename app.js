@@ -9,13 +9,13 @@ const app = express()
 const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
-    res.send('<h1>Hello World</h1>')
+    res.send('<h1>Hello World!!!</h1>')
 })
 app.get('/api', (req, res) => {
     const __filename = fileURLToPath(import.meta.url)
     const __dirname = path.dirname(__filename)
     const data = fs.readFileSync(path.resolve(__dirname, 'data.json'), 'utf8')
-    res.status(201).send(data)
+    res.status(201).json(data)
 })
 
 
